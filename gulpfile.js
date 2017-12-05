@@ -7,9 +7,9 @@ var autoprefixer = require("gulp-autoprefixer");
  
 var frontnote = require("gulp-frontnote");
 
-var browser = require("browser-sync");
+var uglify = require("gulp-uglify");
 
-var plumber = require("gulp-plumber");
+var browser = require("browser-sync");
  
 gulp.task("server", function() {
     browser({
@@ -20,11 +20,6 @@ gulp.task("server", function() {
 });
 gulp.task("js", function() {
     gulp.src(["script/**/*.js","!script/min/**/*.js"])
-        .pipe(plumber())
-        .pipe(frontnote({
-        	css: '../css/style.css'
-        }))
-        .pipe(sass())
         .pipe(uglify())
         .pipe(gulp.dest("./script/min"))
         .pipe(browser.reload({stream:true}))
@@ -32,15 +27,19 @@ gulp.task("js", function() {
  
 gulp.task("sass", function() {
     gulp.src("sass/**/*scss")
-        .pipe(plumber())
         .pipe(frontnote())
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(gulp.dest("./css"))
         .pipe(browser.reload({stream:true}))
 });
+gulp.task("html", function(){
+	gulp.src("**/*.html")
+		.pipe(browser.reload({stream:true}))
+});
 
 gulp.task("default",['server'], function() {
     gulp.watch(["script/**/*.js","!script/min/**/*.js"],["js"]);
     gulp.watch("sass/**/*.scss",["sass"]);
+    gulp.watch("**/*.html", ["html"]);
 });

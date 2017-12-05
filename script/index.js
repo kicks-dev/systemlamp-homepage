@@ -5,7 +5,7 @@
 // Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
-
+// aaa
 function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
