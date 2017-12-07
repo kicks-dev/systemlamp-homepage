@@ -2,6 +2,13 @@
 
 //index.js
 
+$(window).load(function(){
+
+  console.log('load called!');
+  
+});
+
+
 // Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
@@ -37,17 +44,17 @@ window.onclick = function(event) {
 }
 
 //Add Google Maps
-function myMap() {
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
+function initMap() {
+  var latlng = new google.maps.LatLng(33.585287, 130.425956);
+  var map = new google.maps.Map(document.getElementById('map_canvas'), { // #sampleに地図を埋め込む
+        center: { // 地図の中心を指定
+            lat: 33.585287, // 緯度
+            lng: 130.425956 // 経度
+        },
+        zoom: 19 // 地図のズームを指定
+    });
   var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
+        position : latlng, //緯度・経度
+        map : map          //表示する地図
+      });
 }
