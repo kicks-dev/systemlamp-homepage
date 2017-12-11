@@ -14,7 +14,7 @@ var browser = require("browser-sync");
 gulp.task("server", function() {
     browser({
         server: {
-            baseDir: "./"
+            baseDir: "./public"
         }
     });
 });

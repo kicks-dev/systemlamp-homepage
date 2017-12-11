@@ -4,5 +4,7 @@
 　　projects/lamp-homepageを作成
   フォルダに移動
   githubからソースをダウンロード
-　=> nom install gulp
+　=> npm install gulp
+
+
   
