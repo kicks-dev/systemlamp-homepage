@@ -19,27 +19,28 @@ gulp.task("server", function() {
     });
 });
 gulp.task("js", function() {
-    gulp.src(["script/**/*.js","!script/min/**/*.js"])
+    gulp.src("./src/script/**/*.js")
         .pipe(uglify())
-        .pipe(gulp.dest("./script/min"))
+        .pipe(gulp.dest("public/script"))
         .pipe(browser.reload({stream:true}))
 });
  
 gulp.task("sass", function() {
-    gulp.src("sass/**/*scss")
+    gulp.src("./src/styles/**/*.scss")
         .pipe(frontnote())
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(gulp.dest("./css"))
+        .pipe(gulp.dest("public/css"))
         .pipe(browser.reload({stream:true}))
 });
 gulp.task("html", function(){
-	gulp.src("**/*.html")
+	gulp.src("./src/**/*.html")
+        .pipe(gulp.dest("public/"))
 		.pipe(browser.reload({stream:true}))
 });
 
 gulp.task("default",['server'], function() {
-    gulp.watch(["script/**/*.js","!script/min/**/*.js"],["js"]);
-    gulp.watch("sass/**/*.scss",["sass"]);
-    gulp.watch("**/*.html", ["html"]);
+    gulp.watch("src/script/**/*.js",["js"]);
+    gulp.watch("src/styles/**/*.scss",["sass"]);
+    gulp.watch("src/*.html", ["html"]);
 });
