@@ -1,2 +1,4 @@
 node_modules/
-script/min/
+public/*.html
+public/script/
+public/css/

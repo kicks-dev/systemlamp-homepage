@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link ref="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/main.css">
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtA8yi9Rb1fdjw5R_5rS2h1mrnPwONI5E"></script>
 <script type="text/javascript" src="script/index.js"></script> 
@@ -212,12 +212,14 @@ body {font-family: "Lato", sans-serif}
 <!-- End Page Content -->
 </div>
 <!-- Add Google Maps -->
-<div class="w3-row" >
-  <div class="w3-col">
-    <div id="map_canvas_systemlamp" class="googlemap-area w3-grayscale-max"></div>
-  </div>
-  <div class="w3-col">
-    <div id="map_canvas_kyusyu" class="w3-grayscale-max googlemap-area"></div>
+<div class="googlemap-container">
+  <div class="w3-row googlemap-area" >
+    <div class="w3-col">
+      <div id="map_canvas_systemlamp" class="w3-grayscale-max"></div>
+    </div>
+    <div class="w3-col">
+      <div id="map_canvas_kyusyu" class="w3-grayscale-max"></div>
+    </div>
   </div>
 </div>
 
