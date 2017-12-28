@@ -21,7 +21,7 @@ body, html {
 
 /* タイトル image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('/tempImages/670382734.jpg');
+    background-image: url('/tempImages/685306588.jpg');
     min-height: 100%;
 }
 
@@ -37,15 +37,15 @@ body, html {
     min-height: 400px;
 }
 
-/* 開発実績 image (Contact) */
+/* 求人募集 image (Contact) */
 .bgimg-4 {
-    background-image: url("/tempImages/802775028.jpg");
+    background-image: url("/tempImages/480324517.jpg");
     min-height: 400px;
 }
 
-/* 求人募集 image (Contact) */
+/* 問い合わせ image (Contact) */
 .bgimg-5 {
-    background-image: url("/tempImages/802775028.jpg");
+    background-image: url("/tempImages/595733560.jpg");
     min-height: 400px;
 }
 
@@ -70,7 +70,12 @@ div#map_canvas_systemlamp {
 	height: 400px;
 }
 
-div #map_canvas_kyusyu {
+div#map_canvas_axislink {
+
+	height: 400px;
+}
+
+div#map_canvas_kyusyu {
 
 	height: 400px;
 }

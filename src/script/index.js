@@ -6,6 +6,7 @@
 // 地図の初期化
 google.maps.event.addDomListener(window, 'load', function() {
      initSystemlampMap();
+     initAxislinkMap();
      initKyusyuMap();
 
 });
@@ -33,18 +34,19 @@ function toggleFunction() {
     }
 }
 
+var latlngSystemlamp = new google.maps.LatLng(33.585287, 130.425956);
+var latlngAxislink = new google.maps.LatLng(32.836438, 130.778889);
 
-
-//Add Google Maps
-function initSystemlampMap() {
-
-  var mapStyle = [
+var mapStyle = [
     {"stylers": [
       { "saturation": -100 }]
     }
   ];
-  var mapType = new google.maps.StyledMapType(mapStyle);
-  var latlngSystemlamp = new google.maps.LatLng(33.585287, 130.425956);
+var mapType = new google.maps.StyledMapType(mapStyle);
+
+//Add Google Maps
+function initSystemlampMap() {
+  
   var mapSystemlamp = new google.maps.Map(document.getElementById('map_canvas_systemlamp'), { // #sampleに地図を埋め込む
         center: { // 地図の中心を指定
             lat: 33.585287, // 緯度
@@ -62,15 +64,28 @@ function initSystemlampMap() {
       });
 }
 
+
+function initAxislinkMap() {
+  
+  var mapAxislink = new google.maps.Map(document.getElementById('map_canvas_axislink'), { // #sampleに地図を埋め込む
+        center: { // 地図の中心を指定
+            lat: 32.836438, // 緯度
+            lng: 130.778889 // 経度
+        },
+        zoom: 15, // 地図のズームを指定
+        scrollwheel: false
+    });
+  mapAxislink.mapTypes.set('GrayScaleMap', mapType);
+  mapAxislink.setMapTypeId('GrayScaleMap');
+
+  var markerAxislink = new google.maps.Marker({
+        position : latlngAxislink, //緯度・経度
+        map : mapAxislink          //表示する地図
+      });
+}
+
 function initKyusyuMap() {
-  var mapStyle = [
-    {"stylers": [
-      { "saturation": -100 }]
-    }
-  ];
-  var mapType = new google.maps.StyledMapType(mapStyle);
-  var latlngSystemlamp = new google.maps.LatLng(33.585287, 130.425956);
-  var latlngAxislink = new google.maps.LatLng(32.836438, 130.778889);
+  
   var mapKyusyu = new google.maps.Map(document.getElementById('map_canvas_kyusyu'), { // #sampleに地図を埋め込む
         center: { // 地図の中心を指定
             lat: 33.585287, // 緯度
