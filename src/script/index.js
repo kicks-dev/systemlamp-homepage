@@ -11,7 +11,10 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 });
 
+window.onload = function(){
 
+  $('html,body').animate({scrollTop: 0}, 500, 'swing');
+}
 // スクロール時
 window.onscroll = function() {navbarChangeToWhite()};
 
