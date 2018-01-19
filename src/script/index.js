@@ -110,3 +110,41 @@ function initKyusyuMap() {
         map : mapKyusyu          //表示する地図
       });
 }
+
+// 徐々に現れるテキスト
+$(function(){
+  $('.effect div, .effect i').css("opacity","0");
+  $(window).scroll(function (){
+    $(".effect").each(function(){
+      var imgPos = $(this).offset().top;    
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > imgPos - windowHeight + windowHeight/5){
+        $("i, div",this).css("opacity","1" );
+        $("i",this).css({ 
+          "font-size": "100px",
+          "padding": "0 20px 40px"
+        });
+      } else {
+        $("i, div",this).css("opacity","0" );
+        $("i",this).css({ 
+          "font-size": "20px",
+          "padding": "20px"
+        });
+      }
+    });
+  });
+});
+
+// 徐々に消えるテキスト
+$(function(){
+  $(window).scroll(function (){
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if(scroll >= windowHeight/5) {
+      $('#centerBoxFirst').fadeOut();
+    } else {
+      $('#centerBoxFirst').fadeIn();
+    }
+  });
+});
