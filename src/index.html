@@ -15,7 +15,7 @@
 
 <body>
 <!-- ナビゲーション -->
-<div class="w3-top">
+<div class="w3-top" >
   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
@@ -25,7 +25,7 @@
     <a href="service.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> SERVICE</a>
     <a href="works.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> WORKS</a>
     <a href="recruit.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> RECRUIT</a>
-    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
 
   </div>
 
@@ -35,12 +35,12 @@
     <a href="service.html" class="w3-bar-item w3-button" onclick="toggleFunction()">SERVICE</a>
     <a href="works.html" class="w3-bar-item w3-button" onclick="toggleFunction()">WORKS</a>
     <a href="recruit.html" class="w3-bar-item w3-button" onclick="toggleFunction()">RECRUIT</a>
-    <a href="contact.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
 
 <!-- タイトルイメージ　-->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="top">
+<div class="bgimg-1 w3-display-container w3-opacity-min" >
   <div id="centerBoxFirst" class="w3-display-middle" style="white-space:nowrap;">
     <p class="w3-center w3-black w3-xlarge w3-wide w3-animate-opacity">System Lamp</p>
     <p class="w3-center w3-black w3-wide w3-animate-opacity">株式会社システムランプ</p>
@@ -55,7 +55,6 @@
 
   <a href="company.html#top" class="anime-button">more info<i class="fa fa-arrow-right w3-margin-left"></i></a>
 </div>
-
 
 <!-- 事業概要 -->
 <div class="bgimg-2 w3-display-container w3-opacity-min" >
@@ -184,8 +183,8 @@
   </div>
 </div>
 
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
+<!-- Container (recruit Section) -->
+<div class="w3-content w3-container w3-padding-64" id="recruit">
   <h3 class="w3-center">WORK WITH US</h3>
   <p class="w3-center"><em>求人募集</em></p>
 
@@ -202,19 +201,60 @@
   <a href="recruit.html#top" class="anime-button">more info<i class="fa fa-arrow-right w3-margin-left"></i></a>
 </div>
 
-
-
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-5 w3-display-container w3-opacity-min">
+<div class="bgimg-5 w3-display-container w3-opacity-min" id="contact">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">Contact</span>
   </div>
 </div>
+<div class="w3-content w3-container w3-padding-64">
+  <form id="contact-form" class="w3-container w3-card-4 w3-light-grey w3-margin">
+    <h4 class="w3-center w3-opacity w3-padding-large"><i>お問い合わせ</i></h4>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:30px"><i class="w3-large fa fa-user"></i></div>
+      <div class="w3-rest">
+        <input placeholder="氏名" class="w3-input" type="text" name="name">
+      </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:30px"><i class="w3-large fa fa-building-o"></i></div>
+      <div class="w3-rest">
+        <input placeholder="会社名" class="w3-input" type="text" name="company">
+      </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:30px"><i class="w3-large fa fa-map-marker"></i></div>
+      <div class="w3-rest">
+        <input placeholder="住所" class="w3-input" type="text" name="address">
+      </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:30px"><i class="w3-large fa fa-phone"></i></div>
+      <div class="w3-rest">
+        <input placeholder="電話" class="w3-input" type="text" name="phone">
+      </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:30px"><i class="w3-large fa fa-envelope-o"></i></div>
+      <div class="w3-rest">
+        <input placeholder="メール" class="w3-input" type="text" name="email">
+      </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:30px"><i class="w3-large fa fa-pencil"></i></div>
+      <div class="w3-rest">
+        <textarea placeholder="お問合せ内容" class="w3-input" type="text" name="content"></textarea>
+      </div>
+    </div>
+    
+    <input class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" type="submit" name="send" value="Send" />
+  </form>
+</div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
+<div class="w3-content w3-container w3-padding-64" id="where">
   <h3 class="w3-center">WHERE WE WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
+  <p class="w3-center"><i>所在地</i></p>
 
   <div class="w3-center">
     <div class="w3-panel w3-card w3-padding">

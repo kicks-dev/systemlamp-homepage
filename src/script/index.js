@@ -11,10 +11,7 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 });
 
-window.onload = function(){
 
-  $('html,body').animate({scrollTop: 0}, 500, 'swing');
-}
 // スクロール時
 window.onscroll = function() {navbarChangeToWhite()};
 
@@ -147,4 +144,48 @@ $(function(){
       $('#centerBoxFirst').fadeIn();
     }
   });
+});
+
+
+// コンタクトフォーム
+var form_id = "contact-form";
+
+var data = {
+    "access_token": "0bjd0rit9qkrufhps1nz211m"
+};
+
+function onSuccess() {
+    // remove this to avoid redirect
+    console.log('on success');
+}
+
+function onError(error) {
+    // remove this to avoid redirect
+    console.log('on error');
+}
+
+var sendButton = $("#" + form_id + " [name='send']");
+
+function send() {
+    sendButton.val('Sending…');
+    sendButton.prop('disabled',true);
+
+    var subject = "systemlampホームページからの問い合わせ";
+    var message = $("#" + form_id + " [name='text']").val();
+    data['subject'] = subject;
+    data['text'] = message;
+
+    $.post('https://postmail.invotes.com/send',
+        data,
+        onSuccess
+    ).fail(onError);
+
+    return false;
+}
+
+sendButton.on('click', send);
+
+var $form = $("#" + form_id);
+$form.submit(function( event ) {
+    event.preventDefault();
 });
