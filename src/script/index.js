@@ -145,47 +145,62 @@ $(function(){
     }
   });
 });
+$(function(){
+  // コンタクトフォーム
+  var form_id = "jquery_form";
+
+  var data = {
+      "access_token": "0bjd0rit9qkrufhps1nz211m"
+  };
+
+  function onSuccess() {
+      // remove this to avoid redirect
+      console.log('on success');
+  }
+
+  function onError(error) {
+      // remove this to avoid redirect
+      console.log('on error');
+  }
 
 
-// コンタクトフォーム
-var form_id = "contact-form";
+  var sendButton = $("#" + form_id + " [name='send']");
 
-var data = {
-    "access_token": "0bjd0rit9qkrufhps1nz211m"
-};
+  function send() {
+      sendButton.val('Sending…');
+      sendButton.prop('disabled',true);
 
-function onSuccess() {
-    // remove this to avoid redirect
-    console.log('on success');
-}
+      var subject = "systemlampホームページからの問い合わせ";
+      var nameInput = $("#" + form_id + " [name='name']").val();
+      var companyInput = $("#" + form_id + " [name='company']").val();
+      var addressInput = $("#" + form_id + " [name='address']").val();
+      var phoneInput = $("#" + form_id + " [name='phone']").val();
+      var emailInput = $("#" + form_id + " [name='email']").val();
+      var contentInput = $("#" + form_id + " [name='content']").val();
+      var message = '氏名 : ' + nameInput + ' / ' +
+                    '会社 : ' + companyInput + ' / ' +
+                    '住所 : ' + addressInput + ' / ' + 
+                    '電話 : ' + phoneInput + ' / ' +
+                    'メール : ' + emailInput + ' / ' + 
+                    '内容 : ' + contentInput;
 
-function onError(error) {
-    // remove this to avoid redirect
-    console.log('on error');
-}
+      data['subject'] = subject;
+      data['text'] = message;
 
-var sendButton = $("#" + form_id + " [name='send']");
+      $.post('https://postmail.invotes.com/send',
+          data,
+          onSuccess
+      ).fail(onError);
 
-function send() {
-    sendButton.val('Sending…');
-    sendButton.prop('disabled',true);
+      return false;
+  }
 
-    var subject = "systemlampホームページからの問い合わせ";
-    var message = $("#" + form_id + " [name='text']").val();
-    data['subject'] = subject;
-    data['text'] = message;
+  //sendButton.on('click', send);
+  sendButton.click(send);
 
-    $.post('https://postmail.invotes.com/send',
-        data,
-        onSuccess
-    ).fail(onError);
+  var $form = $("#" + form_id);
+  $form.submit(function( event ) {
+      event.preventDefault();
+  });
+})
 
-    return false;
-}
-
-sendButton.on('click', send);
-
-var $form = $("#" + form_id);
-$form.submit(function( event ) {
-    event.preventDefault();
-});
