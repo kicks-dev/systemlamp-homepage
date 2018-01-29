@@ -153,13 +153,10 @@
 <div class="w3-content w3-container w3-padding-64" id="works">
   <h3 class="w3-center">OUR WORK</h3>
   <p class="w3-center"><em>開発実績</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p>私達、システムランプは創業より数多くの受託開発を行ってまいりました。現在は行政、大手メーカーからの受託開発を中心に多数のプロジェクトが同時進行しております。</p>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      <img src="/tempImages/597640430.jpg" class="w3-round w3-image w3-opacity" alt="our work" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
@@ -295,6 +292,24 @@
         <!-- Add Google Maps -->
         <div id="map_canvas_axislink" ></div>
       </div>
+    </div>
+  </div>
+</div>
+<div id="confirm_dialog" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('confirm_dialog').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      
+      <p id="confirm_name"></p>
+      <p id="confirm_company"></p>
+      <p id="confirm_address"></p>
+      <p id="confirm_phone"></p>
+      <p id="confirm_email"></p>
+      <p id="confirm_content"></p>
+      
+      <button id="sending" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">送信</button>
+       <button onclick="document.getElementById('confirm_dialog').style.display='none'" class="w3-button w3-block w3-section w3-red w3-ripple w3-padding">キャンセル</button>
     </div>
   </div>
 </div>

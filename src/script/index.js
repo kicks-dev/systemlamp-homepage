@@ -156,36 +156,52 @@ $(function(){
   function onSuccess() {
       // remove this to avoid redirect
       console.log('on success');
-  }
+      var dialog = $('#confirm_dialog');
+      dialog.css({'display':'block'});
+  };
 
   function onError(error) {
       // remove this to avoid redirect
       console.log('on error');
-  }
+  };
 
 
   var sendButton = $("#" + form_id + " [name='send']");
+  var sendingButton = $('#sending');
+
+  function openDialog() {
+    var dialog = $('#confirm_dialog');
+    dialog.css({'display':'block'});
+
+    var subject = "systemlampホームページからの問い合わせ";
+    var nameInput = $("#" + form_id + " [name='name']").val();
+    var companyInput = $("#" + form_id + " [name='company']").val();
+    var addressInput = $("#" + form_id + " [name='address']").val();
+    var phoneInput = $("#" + form_id + " [name='phone']").val();
+    var emailInput = $("#" + form_id + " [name='email']").val();
+    var contentInput = $("#" + form_id + " [name='content']").val();
+    var message = '氏名 : ' + nameInput + ' / ' +
+                  '会社 : ' + companyInput + ' / ' +
+                  '住所 : ' + addressInput + ' / ' + 
+                  '電話 : ' + phoneInput + ' / ' +
+                  'メール : ' + emailInput + ' / ' + 
+                  '内容 : ' + contentInput;
+
+    data['subject'] = subject;
+    data['text'] = message;
+
+    $('#confirm_name').text('氏名　：　' + nameInput);
+    $('#confirm_company').text('会社　：　' + addressInput);
+    
+
+  };
 
   function send() {
+
       sendButton.val('Sending…');
       sendButton.prop('disabled',true);
 
-      var subject = "systemlampホームページからの問い合わせ";
-      var nameInput = $("#" + form_id + " [name='name']").val();
-      var companyInput = $("#" + form_id + " [name='company']").val();
-      var addressInput = $("#" + form_id + " [name='address']").val();
-      var phoneInput = $("#" + form_id + " [name='phone']").val();
-      var emailInput = $("#" + form_id + " [name='email']").val();
-      var contentInput = $("#" + form_id + " [name='content']").val();
-      var message = '氏名 : ' + nameInput + ' / ' +
-                    '会社 : ' + companyInput + ' / ' +
-                    '住所 : ' + addressInput + ' / ' + 
-                    '電話 : ' + phoneInput + ' / ' +
-                    'メール : ' + emailInput + ' / ' + 
-                    '内容 : ' + contentInput;
-
-      data['subject'] = subject;
-      data['text'] = message;
+      
 
       $.post('https://postmail.invotes.com/send',
           data,
@@ -193,14 +209,15 @@ $(function(){
       ).fail(onError);
 
       return false;
-  }
+  };
 
   //sendButton.on('click', send);
-  sendButton.click(send);
+  sendButton.click(openDialog);
+  sendingButton.click(send);
 
   var $form = $("#" + form_id);
   $form.submit(function( event ) {
       event.preventDefault();
   });
-})
+});
 
