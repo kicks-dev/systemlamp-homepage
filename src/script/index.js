@@ -139,9 +139,9 @@ $(function(){
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     if(scroll >= windowHeight/5) {
-      $('#centerBoxFirst').fadeOut();
+      $('.centerBoxFirst').fadeOut();
     } else {
-      $('#centerBoxFirst').fadeIn();
+      $('.centerBoxFirst').fadeIn();
     }
   });
 });
