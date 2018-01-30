@@ -266,9 +266,8 @@
     <div class="w3-col m4 w3-panel">
       <div class="w3-large w3-margin-bottom">
         <p> 株式会社システムランプ　</p>
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>福岡市博多区博多駅東３丁目-11-28<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Tel: 092-481-7609<br>
       </div>
     </div>
     <div class="w3-col m8 w3-container">
@@ -282,9 +281,8 @@
     <div class="w3-col m4 w3-panel">
       <div class="w3-large w3-margin-bottom">
         <p> 株式会社アクシスリンク</p>
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>熊本県熊本市東区神園2丁目1-1<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Tel: 096-292-8585<br>
       </div>
     </div>
     <div class="w3-col m8 w3-container">
@@ -296,6 +294,9 @@
   </div>
 </div>
 <div id="confirm_dialog" class="w3-modal">
+  <div id="loader"></div>
+  <div id="loader_back" class="w3-opacity-max">
+  </div>
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('confirm_dialog').style.display='none'" 
@@ -310,6 +311,18 @@
       
       <button id="sending" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">送信</button>
        <button onclick="document.getElementById('confirm_dialog').style.display='none'" class="w3-button w3-block w3-section w3-red w3-ripple w3-padding">キャンセル</button>
+    </div>
+  </div>
+</div>
+
+<div id="sent_dialog" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      
+      <p>送信しました。</p>
+      <p>ありがとうございました。</p>
+      
+       <button onclick="document.getElementById('sent_dialog').style.display='none'" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">閉じる</button>
     </div>
   </div>
 </div>

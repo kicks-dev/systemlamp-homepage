@@ -154,10 +154,18 @@ $(function(){
   };
 
   function onSuccess() {
-      // remove this to avoid redirect
-      console.log('on success');
-      var dialog = $('#confirm_dialog');
-      dialog.css({'display':'block'});
+    // remove this to avoid redirect
+    console.log('on success');
+    $('#confirm_dialog').css({'display':'none'});
+    $('#sent_dialog').css({'display':'block'});
+
+    $("#" + form_id + " [name='name']").val('');
+    $("#" + form_id + " [name='company']").val('');
+    $("#" + form_id + " [name='address']").val('');
+    $("#" + form_id + " [name='phone']").val('');
+    $("#" + form_id + " [name='email']").val('');
+    $("#" + form_id + " [name='content']").val('');
+
   };
 
   function onError(error) {
@@ -170,8 +178,9 @@ $(function(){
   var sendingButton = $('#sending');
 
   function openDialog() {
-    var dialog = $('#confirm_dialog');
-    dialog.css({'display':'block'});
+    $('#confirm_dialog').css({'display':'block'});
+    $('#loader').css({'display':'none'});
+    $('#loder_back').css({'display':'none'});
 
     var subject = "systemlampホームページからの問い合わせ";
     var nameInput = $("#" + form_id + " [name='name']").val();
@@ -191,17 +200,23 @@ $(function(){
     data['text'] = message;
 
     $('#confirm_name').text('氏名　：　' + nameInput);
-    $('#confirm_company').text('会社　：　' + addressInput);
-    
-
+    $('#confirm_company').text('会社　：　' + companyInput);
+    $('#confirm_address').text('住所　：　' + addressInput);
+    $('#confirm_phone').text('電話　：　' + phoneInput);
+    $('#confirm_email').text('メール　：　' + emailInput);
+    $('#confirm_content').text('内容　：　' + contentInput);
   };
+
+  function openSentDialog() {
+
+    var dialog = $('#sent_dialog');
+    dialog.css({'display': 'block'});
+  }
 
   function send() {
 
-      sendButton.val('Sending…');
-      sendButton.prop('disabled',true);
-
-      
+      $('#loader').css({'display':'block'});
+      $('#loder_back').css({'display':'block'});
 
       $.post('https://postmail.invotes.com/send',
           data,
