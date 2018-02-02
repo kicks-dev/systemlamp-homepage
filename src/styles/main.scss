@@ -48,11 +48,12 @@ body, html {
     background-image: url("/tempImages/595733560.jpg");
     min-height: 400px;
 }
+.title-letter {margin-bottom: -30px};
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-.w3-tangerine {font-family: "Tangerine", serif;}
-.shadow{text-shadow: 2px 2px #ff0000;}
+p.tangerine {font-family: "Tangerine", serif;}
+p.shadow{text-shadow: 2px 2px #000000;}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
