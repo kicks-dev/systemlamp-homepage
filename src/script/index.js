@@ -132,6 +132,22 @@ $(function(){
     });
   });
 });
+// 徐々に現れるカード
+$(function(){
+  $('.show-card').css("opacity","0");
+  $(window).scroll(function (){
+    $(".show-card").each(function(){
+      var imgPos = $(this).offset().top;    
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > imgPos - windowHeight + windowHeight/5){
+        if(!$(this).hasClass("show-anime")){
+          $(this).addClass("show-anime");
+        }
+      } 
+    });
+  });
+});
 
 // 徐々に消えるテキスト
 $(function(){
