@@ -182,7 +182,7 @@ div#map_canvas_kyusyu {
   100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
+@keyframes fadeInFromTop {
     from {
         opacity:0;
         top:20px;
@@ -192,14 +192,70 @@ div#map_canvas_kyusyu {
         top:0px;
     }
 }
+@keyframes fadeInFromLeft {
+    from {
+        opacity:0;
+        right:20px;
+    }
+    to {
+        opacity:1;
+        right:0px;
+    }
+}
+@keyframes fadeInFromRight {
+    from {
+        opacity:0;
+        left:20px;
+    }
+    to {
+        opacity:1;
+        left:0px;
+    }
+}
+@keyframes fadeInText {
+    from {
+        opacity:0;
+        top:10px;
+        font-size: 130%;
 
-.show-anime {
-    animation-name: fadeIn;
+    }
+    to {
+        opacity:1;
+        top:0px;
+        font-size: 100%;
+    }
+}
+
+.show-anime-from-top {
+    animation-name: fadeInFromTop;
     animation-duration: 3s;
     animation-iteration-count: 1;
     animation-fill-mode:forwards;
     position:relative;
 }
+
+.show-anime-from-left {
+    animation-name: fadeInFromLeft;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    position:relative;
+}
+.show-anime-from-right {
+    animation-name: fadeInFromRight;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    position:relative;
+}
+.show-anime-slow-text {
+    animation-name: fadeInText;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    position:relative;
+}
+
 .anime-delay-1 {
   
     animation-delay: 1s;

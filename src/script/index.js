@@ -64,7 +64,6 @@ function initSystemlampMap() {
       });
 }
 
-
 function initAxislinkMap() {
   
   var mapAxislink = new google.maps.Map(document.getElementById('map_canvas_axislink'), { // #sampleに地図を埋め込む
@@ -107,47 +106,103 @@ function initKyusyuMap() {
         map : mapKyusyu          //表示する地図
       });
 }
+$(function(){
+
+  $('.effect div, .effect i').css("opacity","0");
+  $('.show-card-from-top').css("opacity","0");
+  $('.show-card-from-left').css("opacity","0");
+  $('.show-card-from-right').css("opacity","0");
+  $('.show-text-slow').css("opacity","0");
+  var timer = null;
+  $(window).scroll(function (){
+    clearTimeout(timer);
+    console.log("scroll");
+    timer = setTimeout(function(){
+
+      effectScroll();
+      showCardTopScroll();
+      showCardLeftScroll();
+      showCardRightScroll();
+      showTextScroll();
+    }, 300);
+  });
+})
 
 // 徐々に現れるテキスト
-$(function(){
-  $('.effect div, .effect i').css("opacity","0");
-  $(window).scroll(function (){
-    $(".effect").each(function(){
-      var imgPos = $(this).offset().top;    
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > imgPos - windowHeight + windowHeight/5){
-        $("i, div",this).css("opacity","1" );
-        $("i",this).css({ 
-          "font-size": "100px",
-          "padding": "0 20px 40px"
-        });
-      } else {
-        $("i, div",this).css("opacity","0" );
-        $("i",this).css({ 
-          "font-size": "20px",
-          "padding": "20px"
-        });
+var effectScroll = function(){
+  $(".effect").each(function(){
+    var imgPos = $(this).offset().top;    
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > imgPos - windowHeight + windowHeight/5){
+      $("i, div",this).css("opacity","1" );
+      $("i",this).css({ 
+        "font-size": "100px",
+        "padding": "0 20px 40px"
+      });
+    } else {
+      $("i, div",this).css("opacity","0" );
+      $("i",this).css({ 
+        "font-size": "20px",
+        "padding": "20px"
+      });
+    }
+  });
+}
+
+// 徐々に下から現れるカード
+var showCardTopScroll = function(){
+  $(".show-card-from-top").each(function(){
+    var imgPos = $(this).offset().top;    
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > imgPos - windowHeight + windowHeight/5){
+      if(!$(this).hasClass("show-anime-from-top")){
+        $(this).addClass("show-anime-from-top");
       }
-    });
+    }
   });
-});
-// 徐々に現れるカード
-$(function(){
-  $('.show-card').css("opacity","0");
-  $(window).scroll(function (){
-    $(".show-card").each(function(){
-      var imgPos = $(this).offset().top;    
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > imgPos - windowHeight + windowHeight/5){
-        if(!$(this).hasClass("show-anime")){
-          $(this).addClass("show-anime");
-        }
-      } 
-    });
+};
+// 徐々に左から現れるカード
+var showCardLeftScroll = function(){
+  $(".show-card-from-left").each(function(){
+    var imgPos = $(this).offset().top;    
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > imgPos - windowHeight + windowHeight/5){
+      if(!$(this).hasClass("show-anime-from-left")){
+        $(this).addClass("show-anime-from-left");
+      }
+    } 
   });
-});
+};
+// 徐々に右から現れるカード
+var showCardRightScroll = function(){
+  $(".show-card-from-right").each(function(){
+    var imgPos = $(this).offset().top;    
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > imgPos - windowHeight + windowHeight/5){
+      if(!$(this).hasClass("show-anime-from-right")){
+        $(this).addClass("show-anime-from-right");
+      }
+    } 
+  });
+};
+
+//徐々に現れるテキスト
+var showTextScroll = function(){
+  $(".show-text-slow").each(function(){ 
+    var imgPos = $(this).offset().top;    
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > imgPos - windowHeight + windowHeight/5){
+      if(!$(this).hasClass("show-anime-slow-text")){
+        $(this).addClass("show-anime-slow-text");
+      }
+    } 
+  });
+};
 
 // 徐々に消えるテキスト
 $(function(){
