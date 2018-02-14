@@ -21,19 +21,21 @@ body, html {
 
 /* タイトル image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('/tempImages/685306588.jpg');
+    background-image: url('/tempImages/637385366.jpg');
     min-height: 100%;
 }
 
-/* 企業情報 image (Portfolio) */
+/* 事業概要 image (Portfolio) */
 .bgimg-2 {
-    background-image: url("/tempImages/503911474.jpg");
+    /*background-image: url("/tempImages/503911474.jpg"); */
+    background-image: url("/tempImages/802775028.jpg");
     min-height: 400px;
 }
 
-/* 事業概要 image (Contact) */
+/* 開発実績 image (Contact) */
 .bgimg-3 {
-    background-image: url("/tempImages/802775028.jpg");
+    /*background-image: url("/tempImages/802775028.jpg"); */
+    background-image: url("/tempImages/503911474.jpg");
     min-height: 400px;
 }
 
@@ -268,5 +270,13 @@ div#map_canvas_kyusyu {
 .anime-delay-3 {
   
     animation-delay: 1.5s;
+}
+.anime-delay-4 {
+  
+    animation-delay: 2s;
+}
+.anime-delay-5 {
+  
+    animation-delay: 12.5s;
 }
 
