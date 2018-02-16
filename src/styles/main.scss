@@ -21,33 +21,33 @@ body, html {
 
 /* タイトル image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('/tempImages/637385366.jpg');
+    background-image: url('../tempImages/637385366.jpg');
     min-height: 100%;
 }
 
 /* 事業概要 image (Portfolio) */
 .bgimg-2 {
-    /*background-image: url("/tempImages/503911474.jpg"); */
-    background-image: url("/tempImages/802775028.jpg");
+    /*background-image: url("../tempImages/503911474.jpg"); */
+    background-image: url("../tempImages/802775028.jpg");
     min-height: 400px;
 }
 
 /* 開発実績 image (Contact) */
 .bgimg-3 {
-    /*background-image: url("/tempImages/802775028.jpg"); */
-    background-image: url("/tempImages/503911474.jpg");
+    /*background-image: url("../tempImages/802775028.jpg"); */
+    background-image: url("../tempImages/503911474.jpg");
     min-height: 400px;
 }
 
 /* 求人募集 image (Contact) */
 .bgimg-4 {
-    background-image: url("/tempImages/480324517.jpg");
+    background-image: url("../tempImages/480324517.jpg");
     min-height: 400px;
 }
 
 /* 問い合わせ image (Contact) */
 .bgimg-5 {
-    background-image: url("/tempImages/desk.jpg");
+    background-image: url("../tempImages/desk.jpg");
     min-height: 400px;
 }
 .title-letter {margin-bottom: -30px};
