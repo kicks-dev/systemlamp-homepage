@@ -21,31 +21,33 @@ body, html {
 
 /* タイトル image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('/tempImages/685306588.jpg');
+    background-image: url('../tempImages/637385366.jpg');
     min-height: 100%;
 }
 
-/* 企業情報 image (Portfolio) */
+/* 事業概要 image (Portfolio) */
 .bgimg-2 {
-    background-image: url("/tempImages/503911474.jpg");
+    /*background-image: url("../tempImages/503911474.jpg"); */
+    background-image: url("../tempImages/802775028.jpg");
     min-height: 400px;
 }
 
-/* 事業概要 image (Contact) */
+/* 開発実績 image (Contact) */
 .bgimg-3 {
-    background-image: url("/tempImages/802775028.jpg");
+    /*background-image: url("../tempImages/802775028.jpg"); */
+    background-image: url("../tempImages/503911474.jpg");
     min-height: 400px;
 }
 
 /* 求人募集 image (Contact) */
 .bgimg-4 {
-    background-image: url("/tempImages/480324517.jpg");
+    background-image: url("../tempImages/480324517.jpg");
     min-height: 400px;
 }
 
 /* 問い合わせ image (Contact) */
 .bgimg-5 {
-    background-image: url("/tempImages/desk.jpg");
+    background-image: url("../tempImages/desk.jpg");
     min-height: 400px;
 }
 .title-letter {margin-bottom: -30px};
@@ -182,7 +184,7 @@ div#map_canvas_kyusyu {
   100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
+@keyframes fadeInFromTop {
     from {
         opacity:0;
         top:20px;
@@ -192,25 +194,89 @@ div#map_canvas_kyusyu {
         top:0px;
     }
 }
+@keyframes fadeInFromLeft {
+    from {
+        opacity:0;
+        right:20px;
+    }
+    to {
+        opacity:1;
+        right:0px;
+    }
+}
+@keyframes fadeInFromRight {
+    from {
+        opacity:0;
+        left:20px;
+    }
+    to {
+        opacity:1;
+        left:0px;
+    }
+}
+@keyframes fadeInText {
+    from {
+        opacity:0;
+        top:10px;
+        font-size: 130%;
 
-.show-anime {
-    animation-name: fadeIn;
-    animation-duration: 3s;
+    }
+    to {
+        opacity:1;
+        top:0px;
+        font-size: 100%;
+    }
+}
+
+.show-anime-from-top {
+    animation-name: fadeInFromTop;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode:forwards;
     position:relative;
 }
+
+.show-anime-from-left {
+    animation-name: fadeInFromLeft;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    position:relative;
+}
+.show-anime-from-right {
+    animation-name: fadeInFromRight;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    position:relative;
+}
+.show-anime-slow-text {
+    animation-name: fadeInText;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+    position:relative;
+}
+
 .anime-delay-1 {
   
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 .anime-delay-2 {
   
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .anime-delay-3 {
   
+    animation-delay: 1.5s;
+}
+.anime-delay-4 {
+  
     animation-delay: 2s;
+}
+.anime-delay-5 {
+  
+    animation-delay: 12.5s;
 }
 
