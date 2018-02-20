@@ -26,10 +26,26 @@ body, html {
 }
 
 /* 事業概要 image (Portfolio) */
+.bgimg-1-company {
+    /*background-image: url("../tempImages/503911474.jpg"); */
+    background-image: url('../tempImages/637385366.jpg');
+    min-height: 100px;
+	background-position: 0% 54%;
+}
+
+/* 事業概要 image (Portfolio) */
 .bgimg-2 {
     /*background-image: url("../tempImages/503911474.jpg"); */
     background-image: url("../tempImages/802775028.jpg");
     min-height: 400px;
+}
+
+/* 事業概要 image (Portfolio) */
+.bgimg-2-service {
+    /*background-image: url("../tempImages/503911474.jpg"); */
+    background-image: url("../tempImages/802775028.jpg");
+    min-height: 100px;
+	background-position: 0% 60%;
 }
 
 /* 開発実績 image (Contact) */
@@ -39,10 +55,25 @@ body, html {
     min-height: 400px;
 }
 
+/* 開発実績 image (Contact) */
+.bgimg-3-work {
+    /*background-image: url("../tempImages/802775028.jpg"); */
+    background-image: url("../tempImages/503911474.jpg");
+    min-height: 100px;
+	background-position: 0% 55%;
+}
+
 /* 求人募集 image (Contact) */
 .bgimg-4 {
     background-image: url("../tempImages/480324517.jpg");
     min-height: 400px;
+}
+
+/* 求人募集 image (Contact) */
+.bgimg-4-recruit {
+    background-image: url("../tempImages/480324517.jpg");
+    min-height: 100px;
+	background-position: 0% 35%;
 }
 
 /* 問い合わせ image (Contact) */
@@ -50,6 +81,7 @@ body, html {
     background-image: url("../tempImages/desk.jpg");
     min-height: 400px;
 }
+
 .title-letter {margin-bottom: -30px};
 
 .w3-wide {letter-spacing: 10px;}
