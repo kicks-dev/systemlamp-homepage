@@ -1,7 +1,5 @@
 // AOS初期化
-// AOS.init({
-//   duration: 1200,
-// })
+AOS.init({duration:1300});
 
 // 地図の初期化
 google.maps.event.addDomListener(window, 'load', function() {
@@ -106,24 +104,24 @@ function initKyusyuMap() {
         map : mapKyusyu          //表示する地図
       });
 }
-$(function(){
+// $(function(){
 
   
-  $('.show-card-from-top').css("opacity","0");
-  $('.show-card-from-left').css("opacity","0");
-  $('.show-card-from-right').css("opacity","0");
-  $('.show-text-slow').css("opacity","0");
-  var timer = null;
-  $(window).scroll(function (){
-    clearTimeout(timer);
-    timer = setTimeout(function(){
-      showCardTopScroll();
-      showCardLeftScroll();
-      showCardRightScroll();
-      showTextScroll();
-    }, 200);
-  });
-})
+//   $('.show-card-from-top').css("opacity","0");
+//   $('.show-card-from-left').css("opacity","0");
+//   $('.show-card-from-right').css("opacity","0");
+//   $('.show-text-slow').css("opacity","0");
+//   var timer = null;
+//   $(window).scroll(function (){
+//     clearTimeout(timer);
+//     timer = setTimeout(function(){
+//       showCardTopScroll();
+//       showCardLeftScroll();
+//       showCardRightScroll();
+//       showTextScroll();
+//     }, 200);
+//   });
+// })
 
 // 徐々に現れるテキスト
 $(function(){
@@ -152,59 +150,59 @@ $(function(){
   
 
 
-// 徐々に下から現れるカード
-var showCardTopScroll = function(){
-  $(".show-card-from-top").each(function(){
-    var imgPos = $(this).offset().top;    
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > imgPos - windowHeight + windowHeight/5){
-      if(!$(this).hasClass("show-anime-from-top")){
-        $(this).addClass("show-anime-from-top");
-      }
-    }
-  });
-};
-// 徐々に左から現れるカード
-var showCardLeftScroll = function(){
-  $(".show-card-from-left").each(function(){
-    var imgPos = $(this).offset().top;    
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > imgPos - windowHeight + windowHeight/5){
-      if(!$(this).hasClass("show-anime-from-left")){
-        $(this).addClass("show-anime-from-left");
-      }
-    } 
-  });
-};
-// 徐々に右から現れるカード
-var showCardRightScroll = function(){
-  $(".show-card-from-right").each(function(){
-    var imgPos = $(this).offset().top;    
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > imgPos - windowHeight + windowHeight/5){
-      if(!$(this).hasClass("show-anime-from-right")){
-        $(this).addClass("show-anime-from-right");
-      }
-    } 
-  });
-};
+// // 徐々に下から現れるカード
+// var showCardTopScroll = function(){
+//   $(".show-card-from-top").each(function(){
+//     var imgPos = $(this).offset().top;    
+//     var scroll = $(window).scrollTop();
+//     var windowHeight = $(window).height();
+//     if (scroll > imgPos - windowHeight + windowHeight/5){
+//       if(!$(this).hasClass("show-anime-from-top")){
+//         $(this).addClass("show-anime-from-top");
+//       }
+//     }
+//   });
+// };
+// // 徐々に左から現れるカード
+// var showCardLeftScroll = function(){
+//   $(".show-card-from-left").each(function(){
+//     var imgPos = $(this).offset().top;    
+//     var scroll = $(window).scrollTop();
+//     var windowHeight = $(window).height();
+//     if (scroll > imgPos - windowHeight + windowHeight/5){
+//       if(!$(this).hasClass("show-anime-from-left")){
+//         $(this).addClass("show-anime-from-left");
+//       }
+//     } 
+//   });
+// };
+// // 徐々に右から現れるカード
+// var showCardRightScroll = function(){
+//   $(".show-card-from-right").each(function(){
+//     var imgPos = $(this).offset().top;    
+//     var scroll = $(window).scrollTop();
+//     var windowHeight = $(window).height();
+//     if (scroll > imgPos - windowHeight + windowHeight/5){
+//       if(!$(this).hasClass("show-anime-from-right")){
+//         $(this).addClass("show-anime-from-right");
+//       }
+//     } 
+//   });
+// };
 
-//徐々に現れるテキスト
-var showTextScroll = function(){
-  $(".show-text-slow").each(function(){ 
-    var imgPos = $(this).offset().top;    
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    if (scroll > imgPos - windowHeight + windowHeight/5){
-      if(!$(this).hasClass("show-anime-slow-text")){
-        $(this).addClass("show-anime-slow-text");
-      }
-    } 
-  });
-};
+// //徐々に現れるテキスト
+// var showTextScroll = function(){
+//   $(".show-text-slow").each(function(){ 
+//     var imgPos = $(this).offset().top;    
+//     var scroll = $(window).scrollTop();
+//     var windowHeight = $(window).height();
+//     if (scroll > imgPos - windowHeight + windowHeight/5){
+//       if(!$(this).hasClass("show-anime-slow-text")){
+//         $(this).addClass("show-anime-slow-text");
+//       }
+//     } 
+//   });
+// };
 
 // 徐々に消えるテキスト
 $(function(){
