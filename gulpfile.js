@@ -39,7 +39,7 @@ gulp.task("html", function(){
 		.pipe(browser.reload({stream:true}))
 });
 
-gulp.task("default",['server'], function() {
+gulp.task("default",['js','sass','html','server'], function() {
     gulp.watch("src/script/**/*.js",["js"]);
     gulp.watch("src/styles/**/*.scss",["sass"]);
     gulp.watch("src/*.html", ["html"]);
