@@ -12,7 +12,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 service-sys {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body, html {
 
 /* タイトル image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('../tempImages/637385366.jpg');
+    background-image: url('../tempImages/685306588.jpg');
     min-height: 100%;
 }
 
@@ -80,6 +80,23 @@ body, html {
 .bgimg-5 {
     background-image: url("../tempImages/desk.jpg");
     min-height: 400px;
+}
+
+/* service:システム開発 image (Contact) */
+.service-sys {
+    height: 400px;
+}
+
+/* service:ネットワーク image (Contact) */
+.service-net {
+    background-image: url("../tempImages/607501972.jpg");
+    min-height: 100px;
+}
+
+/* service:webサイト image (Contact) */
+.service-web {
+    background-image: url("../tempImages/496686760.jpg");
+    min-height: 100px;
 }
 
 .title-letter {margin-bottom: -30px};
