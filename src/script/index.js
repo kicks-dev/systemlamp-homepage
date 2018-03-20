@@ -166,7 +166,7 @@ $(function(){
   var form_id = "jquery_form";
 
   var data = {
-      "access_token": "0bjd0rit9qkrufhps1nz211m"
+      "access_token": "a4ftju0t5ly2ivjw64y8qpvs"
   };
 
   function onSuccess() {
