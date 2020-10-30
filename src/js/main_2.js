@@ -1,14 +1,8 @@
-// AOS初期化
-AOS.init({duration:1300});
 
-// 地図の初期化
-google.maps.event.addDomListener(window, 'load', function() {
-     initSystemlampMap();
-    //  initAxislinkMap();
-     initKyusyuMap();
+window.onload = function(){
 
-});
-
+  $('html,body').animate({scrollTop: 0}, 500, 'swing');
+}
 
 // スクロール時
 window.onscroll = function() {navbarChangeToWhite()};
@@ -62,25 +56,6 @@ function initSystemlampMap() {
       });
 }
 
-// function initAxislinkMap() {
-  
-//   var mapAxislink = new google.maps.Map(document.getElementById('map_canvas_axislink'), { // #sampleに地図を埋め込む
-//         center: { // 地図の中心を指定
-//             lat: 32.836438, // 緯度
-//             lng: 130.778889 // 経度
-//         },
-//         zoom: 15, // 地図のズームを指定
-//         scrollwheel: false
-//     });
-//   mapAxislink.mapTypes.set('GrayScaleMap', mapType);
-//   mapAxislink.setMapTypeId('GrayScaleMap');
-
-//   var markerAxislink = new google.maps.Marker({
-//         position : latlngAxislink, //緯度・経度
-//         map : mapAxislink          //表示する地図
-//       });
-// }
-
 function initKyusyuMap() {
   
   var mapKyusyu = new google.maps.Map(document.getElementById('map_canvas_kyusyu'), { // #sampleに地図を埋め込む
@@ -99,29 +74,7 @@ function initKyusyuMap() {
         position : latlngSystemlamp, //緯度・経度
         map : mapKyusyu          //表示する地図
       });
-  // var markerAxislink = new google.maps.Marker({
-  //       position : latlngAxislink, //緯度・経度
-  //       map : mapKyusyu          //表示する地図
-  //     });
 }
-// $(function(){
-
-  
-//   $('.show-card-from-top').css("opacity","0");
-//   $('.show-card-from-left').css("opacity","0");
-//   $('.show-card-from-right').css("opacity","0");
-//   $('.show-text-slow').css("opacity","0");
-//   var timer = null;
-//   $(window).scroll(function (){
-//     clearTimeout(timer);
-//     timer = setTimeout(function(){
-//       showCardTopScroll();
-//       showCardLeftScroll();
-//       showCardRightScroll();
-//       showTextScroll();
-//     }, 200);
-//   });
-// })
 
 // 徐々に現れるテキスト
 $(function(){
